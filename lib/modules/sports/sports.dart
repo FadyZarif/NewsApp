@@ -11,9 +11,7 @@ class SportsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context)=>NewsCubit()..getSportsNews(),
-      child: BlocConsumer<NewsCubit,NewsStates>(
+    return BlocConsumer<NewsCubit,NewsStates>(
         listener: (context,state){},
         builder: (context,state){
           NewsCubit cubit = NewsCubit.get(context);
@@ -23,10 +21,10 @@ class SportsScreen extends StatelessWidget {
               return ListView.separated(
                   physics: BouncingScrollPhysics(),
                   itemBuilder: (context,i){
-                    return buildArticleItem(cubit.sports[i]);
+                    return buildArticleItem(cubit.sports[i],context);
                   },
                   separatorBuilder: (context,i){
-                    return Divider(thickness: 1,);
+                    return Divider(thickness: 1,color: Colors.grey);
                   },
                   itemCount: cubit.sports.length
               );
@@ -34,8 +32,6 @@ class SportsScreen extends StatelessWidget {
             fallback: (context)=>Center(child: CircularProgressIndicator(),),
           );
         },
-
-      ),
     );
   }
 }

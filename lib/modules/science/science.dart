@@ -11,9 +11,7 @@ class ScienceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context)=>NewsCubit()..getScienceNews(),
-      child: BlocConsumer<NewsCubit,NewsStates>(
+    return BlocConsumer<NewsCubit,NewsStates>(
         listener: (context,state){},
         builder: (context,state){
           NewsCubit cubit = NewsCubit.get(context);
@@ -23,10 +21,10 @@ class ScienceScreen extends StatelessWidget {
               return ListView.separated(
                   physics: BouncingScrollPhysics(),
                   itemBuilder: (context,i){
-                    return buildArticleItem(cubit.science[i]);
+                    return buildArticleItem(cubit.science[i],context);
                   },
                   separatorBuilder: (context,i){
-                    return Divider(thickness: 1,);
+                    return Divider(thickness: 1,color: Colors.grey);
                   },
                   itemCount: cubit.science.length
               );
@@ -34,8 +32,6 @@ class ScienceScreen extends StatelessWidget {
             fallback: (context)=>Center(child: CircularProgressIndicator(),),
           );
         },
-
-      ),
     );
   }
 }

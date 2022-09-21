@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-Widget buildArticleItem(Map model)
+Widget buildArticleItem(Map model, BuildContext context)
 {
   return Padding(
     padding: const EdgeInsets.all(20),
@@ -14,7 +14,7 @@ Widget buildArticleItem(Map model)
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image:  DecorationImage(
-                image: NetworkImage('${model['urlToImage']}'),
+                image: model['urlToImage'] != null ? NetworkImage('${model['urlToImage']}') : NetworkImage('https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg'),
                 fit: BoxFit.cover
             ),
           ),
@@ -34,12 +34,8 @@ Widget buildArticleItem(Map model)
                 Expanded(
                   child: Text(
                     '${model['title']}',
-                    style: const TextStyle(
-                      fontSize: 17,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    maxLines: 4,
+                    style: Theme.of(context).textTheme.headline1,
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
 
                   ),
@@ -47,7 +43,7 @@ Widget buildArticleItem(Map model)
                 const SizedBox(
                   height: 10,
                 ),
-                 Text('${model['publishedAt']}')
+                 Text('${model['publishedAt']}',style: TextStyle(color: Colors.grey),)
               ],
             ),
           ),
@@ -55,4 +51,11 @@ Widget buildArticleItem(Map model)
       ],
     ),
   );
+}
+
+void navigator({context,widget}){
+  Navigator.push(context,
+      MaterialPageRoute(
+          builder: (context) => widget
+      ));
 }
