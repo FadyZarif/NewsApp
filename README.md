@@ -4,32 +4,39 @@ News app letting you know the latest news!
 Showing news from News API: https://newsapi.org/
 Uses the Bloc concept.
 Uses Cache to store the value of Dark Mode Feature.
-To download this app, follow this link: [News App](https://www.dropbox.com/scl/fi/kp8sq73ebiuua213qjeeb/ToDo-List.apk?rlkey=r58pr7sa46zxrxyjm8gyj460l&dl=0)
+To download this app, follow this link: [News App](https://www.dropbox.com/scl/fi/a0whx0dhxsn9zsrzhs9xt/News-App.apk?rlkey=8xxxmmdhm25fxjruuery370h2&dl=0)
 
 ## Demo
 
-Here is a demo of the project: 
+Here is a demo (switch dark mode Theme) of the project: 
 
 <p align="center">
-  <img width="235" height="525" src="project_images/demo.gif">
+  <img width="235" height="525" src="project_images/newsDemo.gif">
 </p>
 
-## Delete Task
+## Search for specific news
 
-Here is a delete task in project:
+Here is a Searching for specific news in project:
 
 <p align="center">
-  <img width="235" height="525" src="project_images/delete.gif">
+  <img width="235" height="525" src="project_images/newsSearch.gif">
+</p>
+
+## Read the whole article
+
+Here is a Reading the whole article in project:
+
+<p align="center">
+  <img width="235" height="525" src="project_images/newsWebView.gif">
 </p>
 
 ## For users:
 
 ### Features: 
-1. Can create task.
-2. assign task Time and task Date . 
-3. You can Archive task.
-4. You can mark the task as Done.
-5. Deleting task by swipe.
+1. You can see Business, Sports, Science News.
+2. Turn on Dark mode. 
+3. Search for specific news.
+4. Click on the one you are interested in. and read the whole article.
 
 ## For Developers
 
@@ -37,35 +44,31 @@ Here is a delete task in project:
 1. Platform: Flutter (version 3.0.0)
 2. Programming Language: Dart(version 3.2.0)
 3. Editor: Android Studio
-4. Database: SQLite (have to be included as a dependency too)
+4. Database: From Api (https://newsapi.org/)
 5. State Management: Bloc(cubit)
+6. Local Database: SharedPreferences (Cache to store the value of Dark Mode Feature)
+7. Handle Api: Dio
+
 
 ### Widgets used: 
-1. SafeArea (to make the app UI for different sizes of screen)
-2. Scaffold (to have a general layout of the structure of the app)
-3. AppBar (to display options, actions and current page)
-4. Dismissible (The Dismissible widget in Flutter enables swipe-to-dismiss functionality for list or grid items.)
-5. FloatingActionButton (to add item to a list)
-6. Padding ( adds space around its child widget for better layout control.)
-7. CircleAvatar ( creates a circular-shaped user profile image.)
-8. Row ( arranges its children in a horizontal line, facilitating the creation of horizontal layouts.)
-9. Column ( arranges its children vertically in a single column.)
-10. Text (to display text)
-11. Color (to set color of a perticular widget)
-12. Expanded ( used to allocate additional space to a child widget within a parent widget, enabling flexible and proportional layout.)
-13. Form (to validate the input in input fields and save them) 
-14. SizedBox ( is used to create a box with specified width, height, or both, providing precise control over empty space in the layout.)
-15. IconButton ( creates a clickable icon for triggering actions in a user interface.)
-16. InputTextFormField (to display input fields)
-17. ConditionalBuilder (simplifies conditional UI rendering by allowing dynamic widget creation based on specified conditions)
-18. ListView.separated (creating a scrollable list with separators between items.)
-19. BlocConsumer ( rebuild widgets in response to state changes in a BLoC)
+1. bloc (state management)
+2. dio (handle api)
+3. conditional_builder_null_safety (creation of conditional UI)
+4. shared_preferences (Store and retrieve small persistent data)
+5. webview_flutter (Embeds web content in apps using WebView)
+
 
 ## Flutter Documentation
 Follow [this](https://flutter.dev/docs)  link.
 
-## SQLite Documentation
-Follow [this](https://www.sqlite.org/docs.html)  link.
+## Dio Documentation
+Follow [this](https://pub.dev/documentation/dio/latest/)  link.
+
+## Shared preferences Documentation
+Follow [this](https://pub.dev/documentation/shared_preferences/latest/)  link.
+
+## WebView Documentation
+Follow [this](https://pub.dev/documentation/webview_flutter/latest/)  link.
 
 ## Bloc Documentation
 Follow [this](https://bloclibrary.dev/)  link.

@@ -48,7 +48,6 @@ class MyApp extends StatelessWidget {
                 backgroundColor: Colors.white,
                 elevation: 0,
                 titleSpacing: 20,
-                backwardsCompatibility: false,
                 systemOverlayStyle: SystemUiOverlayStyle(
                   statusBarColor: Colors.white,
                   statusBarIconBrightness: Brightness.dark,
@@ -78,7 +77,6 @@ class MyApp extends StatelessWidget {
                   backgroundColor: Color(0xff333739),
                   elevation: 0,
                   titleSpacing: 20,
-                  backwardsCompatibility: false,
                   systemOverlayStyle: SystemUiOverlayStyle(
                     statusBarColor: Color(0xff333739),
                     statusBarIconBrightness: Brightness.light,
